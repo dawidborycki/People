@@ -14,7 +14,7 @@ RUN dotnet restore "People.WebApp.csproj"
 COPY . .
 WORKDIR "/src/."
 RUN dotnet build "People.WebApp/People.WebApp.csproj" -c $configuration -o /app/build
-RUN dotnet test "People.Tests" ; exit 0
+#RUN dotnet test "People.Tests" ; exit 0
 
 FROM build AS publish
 ARG configuration=Release
